@@ -1,0 +1,44 @@
+section {
+    display: flex;
+    padding: 15px 25px;
+    flex-direction: column;
+    background-color: #fff;
+    margin: 0px 20px;
+}
+
+span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+span h2 {
+    padding-left: 10px;
+    margin: 0px;
+}
+
+h3 {
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+mat-list {
+    padding-top: 0px;
+}
+
+mat-divider {
+    margin: 7px 0px;
+}
+
+mat-button-toggle-group {
+    border: 0px;
+}
+
+mat-button-toggle {
+    border-radius: 10px;
+    padding: 0px 15px;
+}
+
+.mat-button-toggle-checked {
+    background-color: blue;
+    color: #fff;
+}
