@@ -5,11 +5,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent {
 
-  constructor() { }
+  private year!: string;
+  private product!: string;
+  private store!: string;
 
-  ngOnInit(): void {
+
+
+
+  setValue(year: string) {
+    console.log(year);
   }
-
 }

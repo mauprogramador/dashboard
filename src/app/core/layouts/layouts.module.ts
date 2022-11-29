@@ -8,9 +8,11 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { GridComponent } from './grid/grid.component';
 import { MatListModule } from '@angular/material/list';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 const IMPORTS = [
@@ -19,10 +21,12 @@ const IMPORTS = [
     CommonModule,
     RouterModule,
     MatListModule,
-    MatDividerModule,
     MatButtonToggleModule,
     MatGridListModule,
     ComponentsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatProgressSpinnerModule,
 ]
 
 

@@ -16,7 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const COMPONENTS = [
-  MatIconModule
+  MatIconModule,
 ]
 
 @NgModule({

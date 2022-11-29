@@ -2,9 +2,11 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from './../../material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { GraphicComponent } from './graphic/graphic.component';
+import { TopCardComponent } from './top-card/top-card.component';
+import { SalesChartComponent } from './sales-chart/sales-chart.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 const IMPORTS = [
@@ -12,12 +14,14 @@ const IMPORTS = [
   MaterialModule,
   RouterModule,
   NgApexchartsModule,
+  MatCardModule,
+  MatProgressBarModule,
 ];
 
 
 const COMPONENTS = [
-  DashboardComponent,
-  GraphicComponent,
+  TopCardComponent,
+  SalesChartComponent,
 ];
 
 
