@@ -100,21 +100,5 @@ export class SalesDataService {
 
 
 
-// public updateData(series: {name: string, data: number[]}[]) {
-//   this.MAIN_CHART_DATA.series = series;
-// }
-//   public findOneById(id: string): Observable<TaskDto> {
-//     return this.http.get<TaskDto>(baseUrl.concat('/', id));
-//   }
-//   public findOneByDescription(description: string): Observable<TaskDto> {
-//     return this.http.get<TaskDto>(baseUrl.concat('/description/', description));
-//   }
-//   public delete(id: string): Observable<TaskDto> {
-//     return this.http.delete<TaskDto>(baseUrl.concat('/', id));
-//   }
-//   public changeStatus(data: any, status: string): Observable<TaskDto> {
-//     const task: TaskDto = data;
-//     const updateTask: UpdateTaskDto = { description: task.description, status: status }
-//     return this.http.patch<TaskDto>(baseUrl.concat('/', task.id), updateTask);
-//   }
+
 }

@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-top-card',
-  templateUrl: './top-card.component.html',
-  styleUrls: ['./top-card.component.css']
+  selector: 'app-info-card',
+  templateUrl: './info-card.component.html',
+  styleUrls: ['./info-card.component.css']
 })
-export class TopCardComponent implements OnInit {
+export class InfoCardComponent implements OnInit {
 
   @Input() title!: string;
   @Input() value!: string;

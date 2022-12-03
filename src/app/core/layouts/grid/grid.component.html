@@ -1,32 +1,50 @@
-<mat-grid-list cols="6" rowHeight="100px" id="grid" [gutterSize]="'20px'">
+<!--cSpell:disable  -->
+<mat-grid-list cols="7" rowHeight="100px" id="grid" [gutterSize]="'20px'">
 
+
+  <!-- SideNav -->
   <mat-grid-tile [colspan]="1" [rowspan]="7" [style.background]="'#fff'">
     <app-sidenav></app-sidenav>
   </mat-grid-tile>
 
+
+  <!-- Top Cards -->
   <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
-    <app-top-card [title]="'Total de Produtos'" [value]="'30.000'"></app-top-card>
+    <app-info-card [title]="'Total de Vendas'" [value]="'44.000'"></app-info-card>
   </mat-grid-tile>
 
-  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#0f0'">Total of Invoicing</mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
+    <app-info-card [title]="'Total de Faturamento'" [value]="'R$ 286.645,32'"></app-info-card>
+  </mat-grid-tile>
 
-  <mat-grid-tile [colspan]="2" [rowspan]="4" [style.background]="'#fff'">
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
+    <app-info-card [title]="'Total de Clientes'" [value]="'29.076'"></app-info-card>
+  </mat-grid-tile>
+
+
+  <!-- Main Graphic -->
+  <mat-grid-tile [colspan]="4" [rowspan]="4" [style.background]="'#fff'">
     <app-graphic></app-graphic>
   </mat-grid-tile>
 
-  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#ff0'">Store1</mat-grid-tile>
 
-  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#ff0'">Store2</mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="3" [style.background]="'#ff0'">Gráfico Donut</mat-grid-tile>
 
-  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#ff0'">Store3</mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="3" [style.background]="'#ff0'">Gráfico Donut</mat-grid-tile>
 
-  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#0ff'">Product1</mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'#0ff'">Gráfico Produto: Vendas</mat-grid-tile>
 
-  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#0ff'">Product2</mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'#0ff'">Gráfico Produto: Estoque</mat-grid-tile>
 
-  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#0ff'">Product3</mat-grid-tile>
 
-  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#0ff'">Product4</mat-grid-tile>
-  
+  <!-- Bottom Graphic -->
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
+    <app-info-card [title]="'Custo Operacional'" [value]="'R$ 58.766,88'"></app-info-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
+    <app-info-card [title]="'Total de Funcionários'" [value]="'282'"></app-info-card>
+  </mat-grid-tile>
+
 
 </mat-grid-list>
