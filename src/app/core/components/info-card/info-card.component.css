@@ -15,6 +15,7 @@ mat-card-title {
     margin: 0px !important;
     text-align: center;
     font-size: 36px !important;
+    color: #00b5a4;
 }
 mat-card-subtitle {
     font-size: 16px;

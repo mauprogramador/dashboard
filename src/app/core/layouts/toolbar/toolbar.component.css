@@ -23,6 +23,11 @@
   font-size: 30px;
   width: 30px;
   height: 30px;
+  cursor: pointer;
+  color: #00b5a4;
+}
+.icon:hover {
+  color: #009687;
 }
 
 .search {
