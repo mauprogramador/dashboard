@@ -1,4 +1,11 @@
 
+
+export enum Periods {
+    yearOf2021 = "2021", 
+    yearOf2022 = "2022",
+}
+
+
 export enum Stores {
     ALVORADA = "Alvorada",
     VILAVERDE = "Vila-Verde",
@@ -11,6 +18,12 @@ export enum Products {
     CAMISETAS = "Camisetas",
     LIVROS = "Livros",
     POSTERES = "Pôsteres"
+}
+
+
+export enum ChartType {
+    BAR = "bar",
+    DONUT = "donut",
 }
 
 

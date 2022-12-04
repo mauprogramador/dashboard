@@ -82,21 +82,6 @@ export class SalesDataService {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   public getInitialChartData(): ChartData {
     let product = new ProductSalesChart(Stores.CENTRO);
 
@@ -106,5 +91,14 @@ export class SalesDataService {
 
     return this.chart2022Data;
   }
+  
+
+
+
+
+
+
+
+
 
 }
