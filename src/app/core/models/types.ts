@@ -1,5 +1,4 @@
 import { ApexAxisChartSeries, ApexChart, ApexTitleSubtitle, ApexXAxis, ApexYAxis } from "ng-apexcharts";
-import { Products } from "./enums";
 
 
 export type ChartData = {
@@ -16,10 +15,3 @@ export type Series = {
     data: number[];
 }
 
-
-export type Invoicing = { 
-    product: Products, 
-    sales: number, 
-    price: number, 
-    invoicing: number 
-}

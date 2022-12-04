@@ -4,27 +4,27 @@
 
   <!-- SideNav -->
   <mat-grid-tile [colspan]="1" [rowspan]="7" [style.background]="'#fff'">
-    <app-sidenav></app-sidenav>
+    <app-sidenav (period)="getPeriod($event)" (store)="getStore($event)"></app-sidenav>
   </mat-grid-tile>
 
 
   <!-- Top Cards -->
   <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
-    <app-info-card [title]="'Total de Vendas'" [value]="'44.000'"></app-info-card>
+    <app-info-card [title]="'Total de Vendas'" [value]="totalSales"></app-info-card>
   </mat-grid-tile>
 
   <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
-    <app-info-card [title]="'Total de Faturamento'" [value]="'R$ 286.645,32'"></app-info-card>
+    <app-info-card [title]="'Total de Faturamento'" [value]="'R$ ' + invoicing"></app-info-card>
   </mat-grid-tile>
 
   <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
-    <app-info-card [title]="'Total de Clientes'" [value]="'29.076'"></app-info-card>
+    <app-info-card [title]="'Total de Clientes'" [value]="totalClients"></app-info-card>
   </mat-grid-tile>
 
 
   <!-- Main Graphic -->
   <mat-grid-tile [colspan]="4" [rowspan]="4" [style.background]="'#fff'">
-    <app-graphic></app-graphic>
+    <app-graphic [chartData]="chartData"></app-graphic>
   </mat-grid-tile>
 
 
@@ -39,7 +39,7 @@
 
   <!-- Bottom Graphic -->
   <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
-    <app-info-card [title]="'Custo Operacional'" [value]="'R$ 58.766,88'"></app-info-card>
+    <app-info-card [title]="'Custo Operacional'" [value]="'R$ ' + operationalCost"></app-info-card>
   </mat-grid-tile>
 
   <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">

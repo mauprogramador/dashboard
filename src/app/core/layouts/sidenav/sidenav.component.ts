@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Periods, Products, Stores } from '../../models/enums';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent {
 
-  private year!: string;
-  private product!: string;
-  private store!: string;
+  @Output() period = new EventEmitter<Periods>();
 
+  @Output() store = new EventEmitter<Stores>();
 
+  @Output() product = new EventEmitter<Products>();
 
+  setPeriod(period: string) {
+    this.period.emit(period as Periods);
+  }
 
-  setValue(year: string) {
-    console.log(year);
+  setStore(store: string) {
+    this.store.emit(store as Stores);
+  }
+
+  setProduct(product: string) {
+    this.product.emit(product as Products);
   }
 }

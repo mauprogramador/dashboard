@@ -1,7 +1,6 @@
-import { SalesDataService } from './../../services/sales-data.service';
-import { ChartData } from '../../models/types';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { ChartComponent } from "ng-apexcharts";
+import { ChartData } from '../../models/types';
 
 
 @Component({
@@ -9,17 +8,9 @@ import { ChartComponent } from "ng-apexcharts";
   templateUrl: './sales-chart.component.html',
   styleUrls: ['./sales-chart.component.css']
 })
-export class SalesChartComponent implements OnInit {
+export class SalesChartComponent {
 
   @ViewChild("chart") chart!: ChartComponent;
-  public chartData!: ChartData;
-
-  ngOnInit(): void {
-  }
-
-  constructor(
-    private salesDataService: SalesDataService,
-  ) {
-    this.chartData = this.salesDataService.getInitialChartData();
-  }
+  @Input() chartData!: ChartData;
+  
 }

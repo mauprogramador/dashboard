@@ -6,6 +6,10 @@ section {
     margin: 0px 20px;
 }
 
+.dash-btn button {
+    width: 100%;
+}
+
 h3 {
     font-weight: 500;
     margin-bottom: 0px;
@@ -21,6 +25,7 @@ mat-divider {
 
 mat-button-toggle-group {
     border: 0px;
+    flex-direction: column;
 }
 
 mat-button-toggle {

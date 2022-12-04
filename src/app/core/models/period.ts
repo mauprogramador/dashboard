@@ -1,5 +1,6 @@
 import { Periods, Stores } from "./enums";
 import { Store } from "./store";
+import { Series } from "./types";
 
 
 export class Period {
@@ -39,5 +40,12 @@ export class Period {
             return store.invoicing;
         });  
         return total.reduce((a, b) => a + b, 0);
+    }
+
+
+    getSeries(): Series[] {
+        return this.stores.map((store) => {
+            return { name: store.name, data: store.sales }
+        });
     }
 }
