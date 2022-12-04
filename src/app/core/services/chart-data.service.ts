@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ChartTypes } from '../models/enums';
-import { ChartData, Series } from '../models/types';
+import { ChartData, DonutChartData, Series } from '../models/types';
 
 
 @Injectable({
@@ -8,19 +8,21 @@ import { ChartData, Series } from '../models/types';
 })
 export class ChartDataService {
 
-    getChartOptions(title: string, height: number, width: number, type: ChartTypes, series: Series[],categories: string[]): ChartData {
-        return {
-            series: series,
-            chart: {
-                height: height,
-                width: width,
-                type: type,
-            },
+
+
+    getMainChartData(title: string, series: Series[]): ChartData {
+        return  {
             title: {
                 text: title
             },
+            chart: {
+                height: 420,
+                width: 970,
+                type: "area",
+            },
+            series: series,
             x_axis: {
-                categories: categories,
+                categories: ["Jan", "Fev",  "Mar",  "Abr",  "Mai",  "Jun",  "Jul",  "Ago", "Set", "Out", "Nov"],
             },
             y_axis: {
                 labels: {
@@ -30,42 +32,51 @@ export class ChartDataService {
                 },
             }
         }
-        
     }
 
 
-    getPeriodChartData(title: string, series: Series[]): ChartData {
-        return this.getChartOptions(
-            title,
-            420, 
-            970,
-            ChartTypes.BAR,
-            series,
-            ["Jan", "Fev",  "Mar",  "Abr",  "Mai",  "Jun",  "Jul",  "Ago", "Set", "Out", "Nov"],
-        );
+
+    getDonutChartData(title: string, series: number[], labels: string[]): DonutChartData {
+        return {
+            title: {
+                text: title
+            },
+            chart: {
+                height: 300,
+                width: 430,
+                type: ChartTypes.DONUT,
+            },
+            series: series,
+            labels: labels,
+        }
     }
+
 
 
     getProductChartData(title: string, series: Series[]): ChartData {
-        return this.getChartOptions(
-            title,
-            200, 
-            200,
-            ChartTypes.BAR,
-            series,
-            ["2021", "2022"],
-        );
-    }
-
-
-    getDonutChartData(title: string, series: Series[], categories: string[]): ChartData {
-        return this.getChartOptions(
-            title,
-            300, 
-            300,
-            ChartTypes.DONUT,
-            series,
-            categories,
-        );
+        return {
+            title: {
+                text: title
+            },
+            chart: {
+                height: 180,
+                width: 450,
+                type: "bar",
+            },
+            series: series,
+            x_axis: {
+                categories: ["Centro", "Alvorada", "Vila Verde"],
+            },
+            y_axis: {
+                labels: {
+                    formatter: (value: any) => {
+                    return "R$".concat(String(value));
+                    }
+                },
+            }
+        }
     }
 }
+
+
+  

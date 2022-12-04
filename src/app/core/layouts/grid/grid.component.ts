@@ -1,5 +1,6 @@
+import { Data, DonutChartData } from './../../models/types';
 import { Component, OnInit } from '@angular/core';
-import { Periods, Stores } from '../../models/enums';
+import { Periods, Products, Stores } from '../../models/enums';
 import { ChartData } from '../../models/types';
 import { DataService } from '../../services/data.service';
 
@@ -10,39 +11,48 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
+  mainChartData!: ChartData;
+  smallChartData!: ChartData;
+  productsSalesChartData!: DonutChartData;
+  storesSalesChartData!: DonutChartData;
+
+  dashData!: Data;
   totalSales!: string;
   invoicing!: string;
-  operationalCost!: string;
   totalClients!: string;
-  chartData!: ChartData;
+
+  operationalCost!: string;
+  inventory!: string;
 
   constructor(private S: DataService) {}
 
   ngOnInit(): void {
     this.getPeriod(Periods.yearOf2022);
-    this.S.getProductsSales();
-  }
-
-
-  formatStringToReal(value: number): string {
-    return new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
-  }
-  formatStringToInt(value: number): string {
-    return new Intl.NumberFormat('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);
+    this.getProduct(Products.CANECAS);
+    this.operationalCost = this.S.getOperationalCost();
+    this.inventory = this.S.getInventory();
   }
 
 
   getPeriod(period: Periods) {
-    let data = this.S.getPeriodChartData(period);
-    this.totalSales = this.formatStringToInt(data.totalSales);
-    this.invoicing = this.formatStringToReal(data.invoicing);
-    this.operationalCost = this.formatStringToReal(data.operationalCost);
-    this.totalClients = this.formatStringToInt(data.totalClients);
-    this.chartData = data.charData;
+    let data = this.S.getAllData(period);
+    this.mainChartData = data.charData;
+    this.dashData = data.dashData;
+
+    this.totalSales = this.dashData.totalSales;
+    this.invoicing = this.dashData.invoicing;
+    this.totalClients = this.dashData.totalClients;
+    this.productsSalesChartData = this.dashData.productsSalesChartData;
+    this.storesSalesChartData = this.dashData.storesSalesChartData;
   }
 
 
   getStore(store: Stores) {
-    this.chartData = this.S.getStoreChartData(store);
+    this.mainChartData = this.S.getStoreChartData(store);
+  }
+
+
+  getProduct(product: Products) {
+    this.smallChartData = this.S.getProductChartData(product);
   }
 }

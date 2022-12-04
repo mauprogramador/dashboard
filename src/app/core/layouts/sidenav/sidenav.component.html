@@ -56,14 +56,14 @@
     <mat-divider></mat-divider>
 
     <div class="loading">
-        <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'indeterminate'" [value]="'20'" [diameter]="'30'"></mat-progress-spinner>
-        <h2>Executando</h2>
+        <mat-progress-spinner [color]="'primary'" [mode]="mode" [value]="'100'" [diameter]="'30'"></mat-progress-spinner>
+        <h2>{{ execText }}</h2>
     </div>
 
-    <button mat-raised-button color="warn">
+    <button mat-raised-button [color]="color" (click)="turnButton()">
         <span>
-            <mat-icon>stop</mat-icon>
-            <h2>Encerrar</h2>
+            <mat-icon>{{ btnIcon }}</mat-icon>
+            <h2>{{ btnText }}</h2>
         </span>
     </button>
 </section>

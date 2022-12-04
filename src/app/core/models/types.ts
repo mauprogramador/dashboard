@@ -2,11 +2,19 @@ import { ApexAxisChartSeries, ApexChart, ApexTitleSubtitle, ApexXAxis, ApexYAxis
 
 
 export type ChartData = {
-    series: ApexAxisChartSeries;
+    title: ApexTitleSubtitle;
     chart: ApexChart;
+    series: ApexAxisChartSeries;
     x_axis: ApexXAxis;
     y_axis: ApexYAxis;
+}
+
+
+export type DonutChartData = {
     title: ApexTitleSubtitle;
+    chart: ApexChart;
+    series: number[];
+    labels: string[];
 }
 
 
@@ -15,3 +23,11 @@ export type Series = {
     data: number[];
 }
 
+
+export type Data = {
+    totalSales: string,
+    invoicing: string,
+    totalClients: string,
+    productsSalesChartData: DonutChartData,
+    storesSalesChartData: DonutChartData,
+}

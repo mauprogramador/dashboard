@@ -4,7 +4,7 @@
 
   <!-- SideNav -->
   <mat-grid-tile [colspan]="1" [rowspan]="7" [style.background]="'#fff'">
-    <app-sidenav (period)="getPeriod($event)" (store)="getStore($event)"></app-sidenav>
+    <app-sidenav (period)="getPeriod($event)" (store)="getStore($event)" (product)="getProduct($event)"></app-sidenav>
   </mat-grid-tile>
 
 
@@ -24,17 +24,25 @@
 
   <!-- Main Graphic -->
   <mat-grid-tile [colspan]="4" [rowspan]="4" [style.background]="'#fff'">
-    <app-graphic [chartData]="chartData"></app-graphic>
+    <app-graphic [chartData]="mainChartData"></app-graphic>
   </mat-grid-tile>
 
 
-  <mat-grid-tile [colspan]="2" [rowspan]="3" [style.background]="'#ff0'">Gráfico Donut</mat-grid-tile>
+  <!-- Big Donut Graphic -->
+  <mat-grid-tile [colspan]="2" [rowspan]="3" [style.background]="'#fff'">
+    <app-donut-graphic [chartData]="productsSalesChartData"></app-donut-graphic>
+  </mat-grid-tile>
 
-  <mat-grid-tile [colspan]="2" [rowspan]="3" [style.background]="'#ff0'">Gráfico Donut</mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="3" [style.background]="'#fff'">
+    <app-donut-graphic [chartData]="storesSalesChartData"></app-donut-graphic>
+  </mat-grid-tile>
 
-  <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'#0ff'">Gráfico Produto: Vendas</mat-grid-tile>
 
-  <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'#0ff'">Gráfico Produto: Estoque</mat-grid-tile>
+  <!-- Small Donut Graphic -->
+  <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background]="'#fff'">
+    <app-graphic [chartData]="smallChartData"></app-graphic>
+  </mat-grid-tile>
+
 
 
   <!-- Bottom Graphic -->
@@ -42,8 +50,12 @@
     <app-info-card [title]="'Custo Operacional'" [value]="'R$ ' + operationalCost"></app-info-card>
   </mat-grid-tile>
 
-  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#fff'">
-    <app-info-card [title]="'Total de Funcionários'" [value]="'282'"></app-info-card>
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#fff'">
+    <app-info-card [title]="'Funcionários'" [value]="'182'"></app-info-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#fff'">
+    <app-info-card [title]="'Estoque'" [value]="inventory"></app-info-card>
   </mat-grid-tile>
 
 
